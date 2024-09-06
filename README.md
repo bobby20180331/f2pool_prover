@@ -2,6 +2,9 @@
 
 ## Release-notes
 
+- f2pool_prover v0.1.0
+  - Performance improvement, hashrate doubled compare to v0.0.1
+
 - f2pool_prover v0.0.1
   - The first version with 85w + hashrate on RTX 4090
 
@@ -28,3 +31,27 @@ Options:
 
 Oneline command to start:
 `./f2pool_prover --pool aleo-asia.f2pool.com:4400 --account f2pool_mining_account --custom_name workername`
+
+
+## On Ubuntu
+
+1. Get an Aleo wallet address on [foxwallet](https://foxwallet.com/), [leowallet](https://www.leo.app/), [puzzle wallet](https://puzzle.online/) etc.
+2. Download zkwork miner with `wget https://github.com/6block/f2pool_prover/releases/download/v0.1.0/f2pool_prover-v0.1.0.tar.gz`.
+3. `tar -zvxf f2pool_prover-v0.1.0.tar.gz && cd f2pool_prover`.
+4. Update your Aleo address in `run_prover.sh` and set custom name for mining server.
+5. Start mining with `sudo chmod +x run_prover.sh && ./run_prover.sh`.
+6. Check mining log with `tail -f prover.log`.
+
+
+## On HiveOS 
+1. Get an Aleo wallet address on foxwallet, leowallet, puzzle wallet etc.
+2. Add New Flight Sheet with config as follows.
+
+Configuration:
+- Installation URL: https://github.com/6block/f2pool_prover/releases/download/v0.1.0/f2pool_prover-v0.1.0.tar.gz
+- Hash algorithm: aleo
+- Wallet and worker template: %WAL%
+- Pool URL:  aleo-asia.f2pool.com:4400
+
+
+3. Start Flight Sheet
